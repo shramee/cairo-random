@@ -12,7 +12,7 @@ fn hash_random_u128(seed: u128) -> u128 {
     let hash = pedersen(seed.into(), 1);
     match u128s_from_felt252(hash) {
         U128sFromFelt252Result::Narrow(x) => x,
-        U128sFromFelt252Result::Wide((_, x)) => x,
+        U128sFromFelt252Result::Wide((x, _)) => x,
     }
 }
 
